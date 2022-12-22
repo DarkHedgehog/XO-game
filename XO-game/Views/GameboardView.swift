@@ -45,6 +45,21 @@ public class GameboardView: UIView {
     public func canPlaceMarkView(at position: GameboardPosition) -> Bool {
         return markViewForPosition[position] == nil
     }
+
+    public func avialablePositions() -> [GameboardPosition] {
+        var result = [GameboardPosition]()
+        for column in 0..<GameboardSize.columns {
+            for row in 0..<GameboardSize.rows {
+                let position = GameboardPosition(column: column, row: row)
+                if canPlaceMarkView(at: position) {
+                    result.append(position)
+                }
+            }
+        }
+//        return markViewForPosition.filter( { $0.value == nil} ).compactMap( { $0.key })
+        return result
+    }
+
     
     public func placeMarkView(_ markView: MarkView, at position: GameboardPosition) {
         guard self.canPlaceMarkView(at: position) else { return }
