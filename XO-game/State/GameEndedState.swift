@@ -10,6 +10,7 @@ import Foundation
 
 public class GameEndedState: GameState {
     public let isCompleted = false
+    public private(set) var allowInteraction = false
     public let winner: Player?
 
     private(set) weak var gameViewController: GameViewController?

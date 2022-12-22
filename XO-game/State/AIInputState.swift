@@ -1,16 +1,16 @@
 //
-//  PlayerInputState.swift
+//  AIInputState.swift
 //  XO-game
 //
-//  Created by Aleksandr Derevenskih on 21.12.2022.
+//  Created by Aleksandr Derevenskih on 22.12.2022.
 //  Copyright © 2022 plasmon. All rights reserved.
 //
 
 import Foundation
 
-public class PlayerInputState: GameState {
+public class AIInputState: GameState {
     public private(set) var isCompleted = false
-    public private(set) var allowInteraction = true
+    public private(set) var allowInteraction = false
     public let player: Player
 
     private(set) weak var gameViewController: GameViewController?
@@ -37,10 +37,17 @@ public class PlayerInputState: GameState {
     }
 
     public func addMark(at position: GameboardPosition) {
-        guard let gameboardView = self.gameboardView,
-            gameboardView.canPlaceMarkView(at: position) else {
+//        guard let gameboardView = self.gameboardView,
+//            gameboardView.canPlaceMarkView(at: position) else {
+//            return
+//        }
+    }
+    public func addRandomMark() {
+        guard let gameboardView = self.gameboardView else {
             return
         }
+        let avialablePositions = gameboardView.avialablePositions()
+        let position = avialablePositions[Int.random(in: 0..<avialablePositions.count)]
         let markView: MarkView
         switch self.player {
         case .first:
@@ -51,5 +58,6 @@ public class PlayerInputState: GameState {
         self.gameboard?.setPlayer(self.player, at: position)
         self.gameboardView?.placeMarkView(markView, at: position)
         self.isCompleted = true
+
     }
 }

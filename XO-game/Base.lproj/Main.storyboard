@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="Zw1-S3-Jzc">
             <objects>
-                <viewController id="IUe-Gc-Ewx" sceneMemberID="viewController">
+                <viewController id="IUe-Gc-Ewx" customClass="MenuViewController" customModule="XO_game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mid-M9-Scz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Игра против компьютера"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="6rW-X8-QAf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PvAISegue" id="6rW-X8-QAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-Tx-PSw">
@@ -32,7 +32,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Игра с двумя игроками"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ivh-2i-ghS"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PvPSegue" id="ivh-2i-ghS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,7 +130,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ivh-2i-ghS"/>
+        <segue reference="6rW-X8-QAf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
