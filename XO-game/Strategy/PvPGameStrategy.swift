@@ -9,6 +9,7 @@
 import Foundation
 
 class PvPGameStrategy: GameStrategy {
+
     func initialState(player: Player, gameViewController: GameViewController, gameboard: Gameboard, gameboardView: GameboardView) -> GameState {
         return PlayerInputState(
             player: player,
@@ -32,7 +33,11 @@ class PvPGameStrategy: GameStrategy {
         return nil
     }
 
-    func timerState(currentState: GameState) {
+    func timerState(currentState: GameState) { }
 
+    func onSelectPosition(state: GameState, at position: GameboardPosition) {
+        if state.allowInteraction {
+            state.addMark(at: position)
+        }
     }
 }

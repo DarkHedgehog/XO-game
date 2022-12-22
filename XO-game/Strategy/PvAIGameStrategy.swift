@@ -21,13 +21,13 @@ class PvAIGameStrategy: GameStrategy {
         if let winner = referee.determineWinner() {
             return GameEndedState(winner: winner, gameViewController: gameViewController)
         }
-        if let playerInputState = currentState as? PlayerInputState {
+        if currentState is PlayerInputState {
             return AIInputState(
                 player: .second,
                 gameViewController: gameViewController,
                 gameboard: gameboard,
                 gameboardView: gameboardView)
-        } else if let playerInputState = currentState as? AIInputState {
+        } else if currentState is AIInputState {
             return PlayerInputState(
                 player: .first,
                 gameViewController: gameViewController,
@@ -40,6 +40,11 @@ class PvAIGameStrategy: GameStrategy {
     func timerState(currentState: GameState) {
         if let aiInputState = currentState as? AIInputState {
             aiInputState.addRandomMark()
+        }
+    }
+    func onSelectPosition(state: GameState, at position: GameboardPosition) {
+        if state.allowInteraction {
+            state.addMark(at: position)
         }
     }
 }

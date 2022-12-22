@@ -15,6 +15,10 @@
 		75F5CAC42953A66B00280AA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CAC32953A66B00280AA5 /* MenuViewController.swift */; };
 		75F5CAC62953A76100280AA5 /* PvAIGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CAC52953A76100280AA5 /* PvAIGameStrategy.swift */; };
 		75F5CAC82954503500280AA5 /* AIInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CAC72954503500280AA5 /* AIInputState.swift */; };
+		75F5CACA29546CC400280AA5 /* PvP5x5GameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CAC929546CC400280AA5 /* PvP5x5GameStrategy.swift */; };
+		75F5CACC29546F9200280AA5 /* Player5x5InputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CACB29546F9200280AA5 /* Player5x5InputState.swift */; };
+		75F5CACF2954751D00280AA5 /* GameCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CACE2954751D00280AA5 /* GameCommand.swift */; };
+		75F5CAD12954896E00280AA5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5CAD02954896E00280AA5 /* Queue.swift */; };
 		F874E4712224621100364CAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F874E4702224621100364CAE /* AppDelegate.swift */; };
 		F874E4732224621100364CAE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F874E4722224621100364CAE /* GameViewController.swift */; };
 		F874E4762224621100364CAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F874E4742224621100364CAE /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 		75F5CAC32953A66B00280AA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		75F5CAC52953A76100280AA5 /* PvAIGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvAIGameStrategy.swift; sourceTree = "<group>"; };
 		75F5CAC72954503500280AA5 /* AIInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIInputState.swift; sourceTree = "<group>"; };
+		75F5CAC929546CC400280AA5 /* PvP5x5GameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvP5x5GameStrategy.swift; sourceTree = "<group>"; };
+		75F5CACB29546F9200280AA5 /* Player5x5InputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player5x5InputState.swift; sourceTree = "<group>"; };
+		75F5CACE2954751D00280AA5 /* GameCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCommand.swift; sourceTree = "<group>"; };
+		75F5CAD02954896E00280AA5 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F874E46D2224621100364CAE /* XO-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XO-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F874E4702224621100364CAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F874E4722224621100364CAE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 				752E7E2429539AA100C6EB5B /* PlayerInputState.swift */,
 				75F5CABC2953A09000280AA5 /* GameEndedState.swift */,
 				75F5CAC72954503500280AA5 /* AIInputState.swift */,
+				75F5CACB29546F9200280AA5 /* Player5x5InputState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -83,11 +92,21 @@
 		75F5CABE2953A46A00280AA5 /* Strategy */ = {
 			isa = PBXGroup;
 			children = (
+				75F5CACD2954750600280AA5 /* Command */,
 				75F5CABF2953A48200280AA5 /* GameStrategy.swift */,
 				75F5CAC12953A53100280AA5 /* PvPGameStrategy.swift */,
 				75F5CAC52953A76100280AA5 /* PvAIGameStrategy.swift */,
+				75F5CAC929546CC400280AA5 /* PvP5x5GameStrategy.swift */,
 			);
 			path = Strategy;
+			sourceTree = "<group>";
+		};
+		75F5CACD2954750600280AA5 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				75F5CACE2954751D00280AA5 /* GameCommand.swift */,
+			);
+			path = Command;
 			sourceTree = "<group>";
 		};
 		F874E4642224621100364CAE = {
@@ -109,6 +128,7 @@
 		F874E46F2224621100364CAE /* XO-game */ = {
 			isa = PBXGroup;
 			children = (
+				75F5CAD02954896E00280AA5 /* Queue.swift */,
 				75F5CABE2953A46A00280AA5 /* Strategy */,
 				752E7E2129539A4B00C6EB5B /* State */,
 				F874E4702224621100364CAE /* AppDelegate.swift */,
@@ -251,8 +271,10 @@
 				752E7E2529539AA100C6EB5B /* PlayerInputState.swift in Sources */,
 				F874E4732224621100364CAE /* GameViewController.swift in Sources */,
 				75F5CAC22953A53100280AA5 /* PvPGameStrategy.swift in Sources */,
+				75F5CACA29546CC400280AA5 /* PvP5x5GameStrategy.swift in Sources */,
 				F874E4DD2225C25D00364CAE /* GameboardPosition.swift in Sources */,
 				75F5CAC82954503500280AA5 /* AIInputState.swift in Sources */,
+				75F5CACC29546F9200280AA5 /* Player5x5InputState.swift in Sources */,
 				F874E4DF2225C76000364CAE /* MarkView.swift in Sources */,
 				F874E4F12225DFF700364CAE /* Referee.swift in Sources */,
 				F874E4F52225E2CD00364CAE /* Gameboard.swift in Sources */,
@@ -260,12 +282,14 @@
 				F874E4E22225CABF00364CAE /* OView.swift in Sources */,
 				F874E4F32225E0B100364CAE /* GameboardSize.swift in Sources */,
 				75F5CAC42953A66B00280AA5 /* MenuViewController.swift in Sources */,
+				75F5CACF2954751D00280AA5 /* GameCommand.swift in Sources */,
 				75F5CAC62953A76100280AA5 /* PvAIGameStrategy.swift in Sources */,
 				F874E4E42225CB0700364CAE /* XView.swift in Sources */,
 				752E7E2329539A5E00C6EB5B /* GameState.swift in Sources */,
 				F874E4DB2225C1AC00364CAE /* GameboardView.swift in Sources */,
 				F874E4EF2225DE4500364CAE /* Player.swift in Sources */,
 				75F5CAC02953A48200280AA5 /* GameStrategy.swift in Sources */,
+				75F5CAD12954896E00280AA5 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

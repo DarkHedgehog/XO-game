@@ -36,12 +36,10 @@ public class AIInputState: GameState {
         self.gameViewController?.winnerLabel.isHidden = true
     }
 
-    public func addMark(at position: GameboardPosition) {
-//        guard let gameboardView = self.gameboardView,
-//            gameboardView.canPlaceMarkView(at: position) else {
-//            return
-//        }
+    public func addMark(at position: GameboardPosition) -> Bool {
+        return false
     }
+    
     public func addRandomMark() {
         guard let gameboardView = self.gameboardView else {
             return
@@ -58,6 +56,8 @@ public class AIInputState: GameState {
         self.gameboard?.setPlayer(self.player, at: position)
         self.gameboardView?.placeMarkView(markView, at: position)
         self.isCompleted = true
-
+    }
+    public func forceComplete() {
+        isCompleted = true
     }
 }

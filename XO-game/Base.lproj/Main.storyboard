@@ -35,6 +35,15 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="PvPSegue" id="ivh-2i-ghS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-ew-BLN">
+                                <rect key="frame" x="64" y="402" width="247" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Игра с двумя игроками 5X5"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PvP5x5Segue" id="xBl-2H-48z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C7o-c4-hOA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,7 +139,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6rW-X8-QAf"/>
+        <segue reference="xBl-2H-48z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

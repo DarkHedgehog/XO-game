@@ -18,18 +18,16 @@ class MenuViewController: UIViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? GameViewController else {
             return
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "PvAISegue" {
             destination.configure(strategy: PvAIGameStrategy())
+        } else if segue.identifier == "PvP5x5Segue" {
+            destination.configure(strategy: PvP5x5GameStrategy())
         } else {
             destination.configure(strategy: PvPGameStrategy())
         }
     }
-
 }

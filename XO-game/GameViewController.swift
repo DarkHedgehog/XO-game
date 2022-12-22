@@ -35,12 +35,10 @@ class GameViewController: UIViewController {
         gameboardView.onSelectPosition = { [weak self] position in
             guard let self = self else { return }
 
-            if (self.currentState.allowInteraction) {
-                self.currentState.addMark(at: position)
+            self.strategy?.onSelectPosition(state: self.currentState, at: position)
 
-                if self.currentState.isCompleted {
-                    self.goToNextState()
-                }
+            if self.currentState.isCompleted {
+                self.goToNextState()
             }
         }
     }

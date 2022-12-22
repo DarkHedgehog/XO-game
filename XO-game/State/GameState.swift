@@ -12,5 +12,5 @@ protocol GameState {
     var isCompleted: Bool { get }
     var allowInteraction: Bool { get }
     func begin()
-    func addMark(at position: GameboardPosition)
+    func addMark(at position: GameboardPosition) -> Bool
 }

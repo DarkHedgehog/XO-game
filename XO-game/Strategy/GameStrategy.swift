@@ -12,4 +12,5 @@ protocol GameStrategy {
     func initialState(player: Player, gameViewController: GameViewController, gameboard: Gameboard, gameboardView: GameboardView) -> GameState
     func nextState(currentState: GameState, referee: Referee, gameViewController: GameViewController, gameboard: Gameboard, gameboardView: GameboardView) -> GameState?
     func timerState(currentState: GameState)
+    func onSelectPosition(state: GameState, at position: GameboardPosition)
 }
